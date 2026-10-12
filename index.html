@@ -417,7 +417,7 @@ render();
 
 /* highlight the section a QR code pointed to */
 function arrive(){const h=location.hash.slice(1);if(!h)return;const el=document.getElementById(h);if(el){el.classList.remove('qr-arrived');void el.offsetWidth;el.classList.add('qr-arrived');}}
-window.addEventListener('hashchange',arrive);arrive();
+window.addEventListener('hashchange',arrive);arrive();function jump(){const h=location.hash.slice(1);const el=h&&document.getElementById(h);if(el)el.scrollIntoView({behavior:'auto',block:'start'});}window.addEventListener('load',()=>{jump();if(document.fonts)document.fonts.ready.then(()=>setTimeout(jump,50));});
 </script>
 </body>
 </html>
